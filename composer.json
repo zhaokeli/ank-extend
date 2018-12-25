@@ -3,10 +3,17 @@
     "description": "ank-extend",
     "license": "MIT",
     "authors": [
+    {
+        "name": "mokuyu",
+        "email": "735579768@qq.com"
+    }],
+    "require":
+    {},
+    "autoload":
+    {
+        "psr-4":
         {
-            "name": "mokuyu",
-            "email": "735579768@qq.com"
+            "ank\\extend\\": "lib"
         }
-    ],
-    "require": {}
+    }
 }
