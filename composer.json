@@ -1,0 +1,12 @@
+{
+    "name": "mokuyu/ank-extend",
+    "description": "ank-extend",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mokuyu",
+            "email": "735579768@qq.com"
+        }
+    ],
+    "require": {}
+}
