@@ -2,6 +2,7 @@
     "name": "mokuyu/ank-extend",
     "description": "ank-extend",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
     {
         "name": "mokuyu",
