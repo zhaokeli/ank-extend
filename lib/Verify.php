@@ -158,8 +158,9 @@ class Verify
         }
 
         // 绘验证码
-        $code   = array(); // 验证码
-        $codeNX = 25; // 验证码第N个字符的左边距
+        $code = array(); // 验证码
+        // 算出验证码第N个字符的左边距
+        $codeNX = ($this->imageW - $this->length * $this->fontSize - ($this->length - 1) * mt_rand(5, 10)) / 2;
         // 验证码字体随机颜色
         $this->_color = imagecolorallocate($this->_image, mt_rand(1, 150), mt_rand(1, 150), mt_rand(1, 150));
         if ($this->useZh) {
@@ -173,7 +174,9 @@ class Verify
             for ($i = 0; $i < $this->length; $i++) {
                 $this->_color = imagecolorallocate($this->_image, mt_rand(1, 150), mt_rand(1, 150), mt_rand(1, 150));
                 $code[$i]     = $this->codeSet[mt_rand(0, strlen($this->codeSet) - 1)];
-                $codeNX += mt_rand($this->fontSize * 1.2, $this->fontSize * 1.6);
+                if ($i > 0) {
+                    $codeNX += mt_rand($this->fontSize * 1.2, $this->fontSize * 1.6);
+                }
                 imagettftext($this->_image, $this->fontSize, mt_rand(-40, 40), $codeNX, $this->fontSize * 1.6, $this->_color, $this->fontttf, $code[$i]);
             }
         }
